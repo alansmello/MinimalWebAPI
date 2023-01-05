@@ -58,3 +58,4 @@
 /home/alanmello/Documentos/CursoUdemyWebApi/IWantApp/IWantApp/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
 /home/alanmello/Documentos/CursoUdemyWebApi/IWantApp/IWantApp/obj/Debug/net6.0/IWantApp.MvcApplicationPartsAssemblyInfo.cs
 /home/alanmello/Documentos/CursoUdemyWebApi/IWantApp/IWantApp/obj/Debug/net6.0/IWantApp.csproj.CopyComplete
+/home/alanmello/Documentos/CursoUdemyWebApi/IWantApp/IWantApp/bin/Debug/net6.0/Flunt.dll
