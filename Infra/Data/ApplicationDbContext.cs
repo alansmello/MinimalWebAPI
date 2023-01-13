@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Flunt.Notifications;
 using IWantApp.Domain.Products;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace IWantApp.Infra.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
 
         public DbSet<Product> Products { get; set; }
@@ -20,6 +22,7 @@ namespace IWantApp.Infra.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            base.OnModelCreating(builder);
             builder.Ignore<Notification>();
             builder.Entity<Product>()
                 .Property(p=> p.Name).IsRequired();
