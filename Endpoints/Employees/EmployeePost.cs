@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
-using IWantApp.Domain.Products;
-using IWantApp.Infra.Data;
 using Microsoft.AspNetCore.Identity;
 
 namespace IWantApp.Endpoints.Employees;
@@ -24,7 +18,7 @@ public class EmployeePost
         };
         var result = userManager.CreateAsync(user, employeeRequest.password).Result;
         if(!result.Succeeded)
-          return Results.BadRequest(result.Errors.First());
+          return Results.ValidationProblem(result.Errors.ConvertToProblemDetails());
 
         var userClains = new List<Claim>
         {
