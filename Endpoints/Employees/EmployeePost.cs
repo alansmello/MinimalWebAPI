@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using IWantApp.Domain.Products;
 using IWantApp.Infra.Data;
@@ -10,7 +11,7 @@ namespace IWantApp.Endpoints.Employees;
 
 public class EmployeePost
 {
-    public static string Template => "/employee";
+    public static string Template => "/employees";
     public static string[] Methods => new string[] {HttpMethod.Post.ToString()};
     public static Delegate Handle => Action;
 
@@ -24,8 +25,19 @@ public class EmployeePost
         var result = userManager.CreateAsync(user, employeeRequest.password).Result;
         if(!result.Succeeded)
           return Results.BadRequest(result.Errors.First());
+
+        var userClains = new List<Claim>
+        {
+          new Claim("EmployeeCode", employeeRequest.employeeCode ),
+          new Claim("Name", employeeRequest.name)
+        };
     
-               
-        return Results.Created($"/emplyee/{user.Id}", user.Id);
+        var claimResult = userManager.AddClaimsAsync(user, userClains).Result;  
+        if(!claimResult.Succeeded)
+          return  Results.BadRequest(claimResult.Errors.First());
+
+        
+
+        return Results.Created($"/emplyees/{user.Id}", user.Id);
     }
 }
