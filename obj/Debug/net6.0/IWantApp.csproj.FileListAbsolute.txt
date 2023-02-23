@@ -61,3 +61,4 @@
 /home/alanmello/Documentos/CursoUdemyWebApi/IWantApp/IWantApp/bin/Debug/net6.0/Flunt.dll
 /home/alanmello/Documentos/CursoUdemyWebApi/IWantApp/IWantApp/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 /home/alanmello/Documentos/CursoUdemyWebApi/IWantApp/IWantApp/bin/Debug/net6.0/Dapper.dll
+/home/alanmello/Documentos/CursoUdemyWebApi/IWantApp/IWantApp/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
