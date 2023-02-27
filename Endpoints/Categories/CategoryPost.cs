@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using System.Net;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,11 @@ public class CategoryPost
     public static string Template => "/categories";
     public static string[] Methods => new string[] {HttpMethod.Post.ToString()};
     public static Delegate Handle => Action;
- 
-    public static IResult Action(CategoryRequest categoryRequest, ApplicationDbContext context)
+    [Authorize(Policy = "EmployeePolicy")]
+    public static IResult Action(CategoryRequest categoryRequest, HttpContext http, ApplicationDbContext context)
     {
-   
-        var category = new Category(categoryRequest.Name, "Test", "Test");
+        var userId = http.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;// esta consulta é no token e não no banco
+        var category = new Category(categoryRequest.Name, userId, userId);
         
         if(!category.IsValid)
         {

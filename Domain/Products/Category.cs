@@ -18,7 +18,7 @@ public class Category : Entity
         CreatedBy = createdBy;
         EditedBy = editedBy;
         CreatedOn = DateTime.Now;
-        EditedOn = DateTime.Now;
+       
 
         Validate();             
     }
@@ -32,11 +32,12 @@ public class Category : Entity
           .IsNotNullOrEmpty(EditedBy, "EditedBy");
         AddNotifications(contract);
   }
-    public void EditInfo(string name, bool active)
+    public void EditInfo(string name, bool active, string editedBy)
     {
       Active = active;
       Name = name;
-
+      EditedBy = editedBy;
+      EditedOn = DateTime.Now;
       Validate();
     }
 
