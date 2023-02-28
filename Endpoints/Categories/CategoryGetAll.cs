@@ -1,10 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using IWantApp.Domain.Products;
-using IWantApp.Infra.Data;
-
 namespace IWantApp.Endpoints.Categories;
 
 public class CategoryGetAll

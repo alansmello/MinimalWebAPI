@@ -1,10 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Flunt.Notifications;
-using Microsoft.AspNetCore.Identity;
-
 namespace IWantApp.Endpoints;
 
 public static class ProblemDetailsExtensions

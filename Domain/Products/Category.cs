@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Flunt.Validations;
-
 namespace IWantApp.Domain.Products;
 
 public class Category : Entity
