@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/alanmello/Documentos/CursoUdemyWebApi/IWantApp/IWantApp/IWantApp.csproj": {}
+    "/home/alanmello/Documents/CursoUdemyWebApi/IWantApp/IWantApp/IWantApp.csproj": {}
   },
   "projects": {
-    "/home/alanmello/Documentos/CursoUdemyWebApi/IWantApp/IWantApp/IWantApp.csproj": {
+    "/home/alanmello/Documents/CursoUdemyWebApi/IWantApp/IWantApp/IWantApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/alanmello/Documentos/CursoUdemyWebApi/IWantApp/IWantApp/IWantApp.csproj",
+        "projectUniqueName": "/home/alanmello/Documents/CursoUdemyWebApi/IWantApp/IWantApp/IWantApp.csproj",
         "projectName": "IWantApp",
-        "projectPath": "/home/alanmello/Documentos/CursoUdemyWebApi/IWantApp/IWantApp/IWantApp.csproj",
+        "projectPath": "/home/alanmello/Documents/CursoUdemyWebApi/IWantApp/IWantApp/IWantApp.csproj",
         "packagesPath": "/home/alanmello/.nuget/packages/",
-        "outputPath": "/home/alanmello/Documentos/CursoUdemyWebApi/IWantApp/IWantApp/obj/",
+        "outputPath": "/home/alanmello/Documents/CursoUdemyWebApi/IWantApp/IWantApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/alanmello/.nuget/NuGet/NuGet.Config"
@@ -67,6 +67,14 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Serilog.Sinks.MSSqlServer": {
+              "target": "Package",
+              "version": "[6.3.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
