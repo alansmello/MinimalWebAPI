@@ -23,9 +23,8 @@ public class ProductGetId
         if(category == null)
             return Results.NotFound();
 
-        var productResponse = new ProductResponse(product.Name, category.Name ,product.Description, product.HasStock, product.Active );
+        var productResponse = new ProductResponse(product.Name, category.Name ,product.Description, product.HasStock, product.Price, product.Active );
 
-       Console.WriteLine(productResponse);
         return Results.Ok(productResponse);
     }
 }
