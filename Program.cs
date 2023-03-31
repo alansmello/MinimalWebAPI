@@ -1,3 +1,5 @@
+using IWantApp.Domain.Users;
+using IWantApp.Endpoints.Customers;
 using IWantApp.Endpoints.Products;
 using Microsoft.AspNetCore.Diagnostics;
 using Serilog;
@@ -57,6 +59,7 @@ builder.Services.AddAuthentication(x =>
 });
 
 builder.Services.AddScoped<QueryAllUsersWithClaimName>();
+builder.Services.AddScoped<UsersCreator>();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms.aspnetcore/swashbuckle
@@ -88,6 +91,7 @@ app.MapMethods(ProductPost.Template, ProductPost.Methods, ProductPost.Handle);
 app.MapMethods(ProductGetAll.Template, ProductGetAll.Methods, ProductGetAll.Handle);
 app.MapMethods(ProductGetId.Template, ProductGetId.Methods, ProductGetId.Handle);
 app.MapMethods(ProductGetShowCase.Template, ProductGetShowCase.Methods, ProductGetShowCase.Handle);
+app.MapMethods(CustomerPost.Template, CustomerPost.Methods, CustomerPost.Handle);
 
 
 
