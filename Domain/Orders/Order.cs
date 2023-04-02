@@ -16,12 +16,13 @@ public class Order : Entity
 
     public Order(){}
 
-    public Order(string customerId, string clientName, List<Product> products, string deliveryAdress)
+    public Order(string customerId, string customerName, List<Product> products, string deliveryAdress)
     {
         CustomerId = customerId;
         Products = products;
-        CreatedBy = clientName;
-        EditedBy = clientName;
+        DeliveryAddress = deliveryAdress;
+        CreatedBy = customerName;
+        EditedBy = customerName;
         CreatedOn = DateTime.UtcNow;
         EditedOn = DateTime.UtcNow;
 
@@ -38,7 +39,8 @@ public class Order : Entity
     {
         var contract = new Contract<Order>()
             .IsNotNullOrEmpty(CustomerId, "Customer")
-            .IsNotNull(Products, "Products");
+            .IsTrue(Products != null && Products.Any(), "Products")
+            .IsNotNullOrEmpty(DeliveryAddress, "Address");
             AddNotifications(contract);
     }
    

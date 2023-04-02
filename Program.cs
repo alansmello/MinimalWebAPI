@@ -1,11 +1,13 @@
 using IWantApp.Domain.Users;
 using IWantApp.Endpoints.Customers;
+using IWantApp.Endpoints.Orders;
 using IWantApp.Endpoints.Products;
 using Microsoft.AspNetCore.Diagnostics;
 using Serilog;
 using Serilog.Sinks.MSSqlServer;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.WebHost.UseSerilog((context, configuration)=>{
     configuration
         .WriteTo.Console()
@@ -36,6 +38,7 @@ builder.Services.AddAuthorization(options =>
     .Build();
     options.AddPolicy("EmployeePolicy", p => p.RequireAuthenticatedUser().RequireClaim("EmployeeCode"));
     options.AddPolicy("EmployeeSpecific001Policy", p => p.RequireAuthenticatedUser().RequireClaim("EmployeeCode", "002")); 
+    options.AddPolicy("CpfPolicy", p => p.RequireAuthenticatedUser().RequireClaim("Cpf"));
 
 });
 
@@ -93,6 +96,7 @@ app.MapMethods(ProductGetId.Template, ProductGetId.Methods, ProductGetId.Handle)
 app.MapMethods(ProductGetShowCase.Template, ProductGetShowCase.Methods, ProductGetShowCase.Handle);
 app.MapMethods(CustomerPost.Template, CustomerPost.Methods, CustomerPost.Handle);
 app.MapMethods(CustomerGet.Template, CustomerGet.Methods, CustomerGet.Handle);
+app.MapMethods(OrderPost.Template, OrderPost.Methods, OrderPost.Handle);
 
 
 
