@@ -32,7 +32,7 @@ public class OrderPost
          
         var order = new Order(customerId, customerName, productsFound, orderRequest.DeliveryAddress);
 
-    
+        
         if(!order.IsValid)
         {
                     return Results.ValidationProblem(order.Notifications.ConvertToProblemDetails());

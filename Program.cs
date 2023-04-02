@@ -97,6 +97,7 @@ app.MapMethods(ProductGetShowCase.Template, ProductGetShowCase.Methods, ProductG
 app.MapMethods(CustomerPost.Template, CustomerPost.Methods, CustomerPost.Handle);
 app.MapMethods(CustomerGet.Template, CustomerGet.Methods, CustomerGet.Handle);
 app.MapMethods(OrderPost.Template, OrderPost.Methods, OrderPost.Handle);
+app.MapMethods(OrderGetById.Template, OrderGetById.Methods, OrderGetById.Handle);
 
 
 
