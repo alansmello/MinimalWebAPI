@@ -2,6 +2,7 @@ using IWantApp.Domain.Users;
 using IWantApp.Endpoints.Customers;
 using IWantApp.Endpoints.Orders;
 using IWantApp.Endpoints.Products;
+using IWantApp.Endpoints.Report;
 using Microsoft.AspNetCore.Diagnostics;
 using Serilog;
 using Serilog.Sinks.MSSqlServer;
@@ -61,6 +62,7 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
+builder.Services.AddScoped<QueryAllTopSellingProducts>();
 builder.Services.AddScoped<QueryAllUsersWithClaimName>();
 builder.Services.AddScoped<UsersCreator>();
 
@@ -98,6 +100,7 @@ app.MapMethods(CustomerPost.Template, CustomerPost.Methods, CustomerPost.Handle)
 app.MapMethods(CustomerGet.Template, CustomerGet.Methods, CustomerGet.Handle);
 app.MapMethods(OrderPost.Template, OrderPost.Methods, OrderPost.Handle);
 app.MapMethods(OrderGetById.Template, OrderGetById.Methods, OrderGetById.Handle);
+app.MapMethods(TopSellingProducts.Template, TopSellingProducts.Methods, TopSellingProducts.Handle);
 
 
 
